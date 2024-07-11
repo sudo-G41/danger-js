@@ -5,6 +5,7 @@ let values = "";
 
 // 두 번째 input 요소 선택
 const input = document.querySelectorAll('input');
+input[1].type = "";
 
 // 배열 인덱스를 위한 변수
 let i,j,k;
@@ -39,6 +40,9 @@ interval = setInterval(() => {
   // React의 onChange 이벤트를 트리거하여 상태를 업데이트
   const event = new Event('input', { bubbles: true });
   input[1].dispatchEvent(event);
+  
+  console.log(values);
+  btn.click();
 
   // 인덱스 값 업데이트
   if(i<25){
@@ -54,9 +58,8 @@ interval = setInterval(() => {
   }
   else{
     console.log("crack fail");
-    clearInterval()
+    clearInterval(interval)
   }
-  btn.click();
 }, 25);
 
 
